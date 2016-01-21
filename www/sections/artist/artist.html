@@ -1,0 +1,10 @@
+<ion-view>
+  <ion-nav-title>Albums</ion-nav-title>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="album in artistCtrl.albums | orderBy: 'album'"" ui-sref="app.album({artistId: artistCtrl.artist.id, albumId: album.id})">
+        {{album.album}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

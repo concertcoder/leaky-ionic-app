@@ -1,0 +1,9 @@
+<ion-view view-title="Artists">
+  <ion-content>
+    <ion-list>
+      <ion-item collection-repeat="artist in homeCtrl.artists" ui-sref="app.artist({artistId: artist.id})">
+        {{artist.artist}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

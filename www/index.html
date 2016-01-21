@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="lib/ramda/dist/ramda.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="core/ui/ui-service.js"></script>
+    <script src="core/playlist/playlist-service.js"></script>
+    <script src="core/base-data/base-data.js"></script>
+    <script src="core/router/router-config.js"></script>
+    <script src="sections/create-playlist/create-playlist-controller.js"></script>
+    <script src="sections/search/search-controller.js"></script>
+    <script src="sections/playlist-tracks/playlist-tracks-controller.js"></script>
+    <script src="sections/playlists/playlists-controller.js"></script>
+    <script src="sections/album/album-controller.js"></script>
+    <script src="sections/artist/artist-controller.js"></script>
+    <script src="sections/home/home-controller.js"></script>
+    <script src="sections/menu/menu-controller.js"></script>
+    <script src="core/app.js"></script>
+  </head>
+
+  <body ng-app="leakyapp">
+    <ion-nav-view></ion-nav-view>
+    <script id="add-to-playlist.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">Choose Playlist</h1>
+        </ion-header-bar>
+        <ion-content>
+          <ion-list>
+              <ion-item ng-repeat="playlistOption in playlistOptions" ng-click="addToPlaylist(playlistOption.id, track)">
+                {{playlistOption.title}}
+              </ion-item>
+            </ion-list>
+            <div style="text-align:center" ng-if="!playlistOptions.length">
+              <h4>No Playlists</h4>
+            </div>
+            <div class="row">
+              <button class="button button-stable col" ng-click="closePlaylistModal()">
+                Cancel
+              </button>
+            <div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+  </body>
+</html>

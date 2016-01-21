@@ -1,0 +1,20 @@
+<ion-view view-title="Search">
+  <ion-content>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="searchCtrl.search" ng-change="searchCtrl.getSearchResultsInAFewSeconds(searchCtrl.search)" placeholder="Search">
+    </label>
+    <div style="padding-top: 20px;" class="text-center" ng-show="searchCtrl.searching">
+      <ion-spinner icon="android"></ion-spinner>
+    </div>
+    <ion-list ng-show="!searchCtrl.searching">
+      <ion-item ng-if="searchCtrl.searchResults.length" ng-repeat="searchResult in searchCtrl.searchResults">
+        <h3>{{searchResult.type}}</h3>
+        {{searchResult.display}}
+      </ion-item>
+      <ion-item ng-if="!searchCtrl.searchResults.length && searchCtrl.search.length > 2">
+        No Search Results
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

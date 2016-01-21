@@ -1,0 +1,13 @@
+<ion-view>
+  <ion-nav-title>Tracks</ion-nav-title>
+  <ion-content>
+    <ion-list delegate-handle="album-tracks" can-swipe="true">
+      <ion-item ng-repeat="track in albumCtrl.tracks | orderBy: 'number'" ng-click="albumCtrl.playTrack()">
+        {{track.track}}
+        <ion-option-button class="button-balanced" ng-click="albumCtrl.openModalForTrack(track)">
+          Add to Playlist
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>z

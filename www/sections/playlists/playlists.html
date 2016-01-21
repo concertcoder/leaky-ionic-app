@@ -1,0 +1,23 @@
+<ion-view view-title="Playlists">
+  <ion-content>
+    <div class="row">
+      <button class="button button-balanced col" ui-sref="app.createPlaylist()">
+        <i class="icon ion-ios-plus-empty"></i>
+        New Playlist
+      </button>
+    </div>
+    <ion-list can-swipe="true">
+      <ion-item ng-repeat="playlist in playlistsCtrl.playlists"
+      ui-sref="app.playlistTracks({playlistId: playlist.id})">
+        <h2>{{playlist.title}}</h2>
+        {{playlist.tracks.length}} Tracks
+        <ion-option-button class="button-assertive" ng-click="playlistsCtrl.removePlaylist(playlist.id)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <div class="text-center" ng-if="!playlistsCtrl.playlists.length">
+      <h4>No Playlists</h4>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view>
+  <ion-nav-title>Playlist Tracks</ion-nav-title>
+  <ion-content>
+    <ion-list delegate-handle="playlist-tracks" can-swipe="true">
+      <ion-item ng-click="playlistTracksCtrl.playTrack()" ng-repeat="track in playlistTracksCtrl.playlist.tracks track by $index">
+        {{track.track}}
+        <ion-option-button class="button-assertive" ng-click="playlistTracksCtrl.removeTrackByIndex(playlistTracksCtrl.playlist.id, $index) && playlistTracksCtrl.closeOptionButtons()">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <div class="text-center" ng-if="!playlistTracksCtrl.playlist.tracks.length">
+      <h4>No Tracks</h4>
+    </div>
+  </ion-content>
+</ion-view>

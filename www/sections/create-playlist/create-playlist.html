@@ -1,0 +1,21 @@
+<ion-view view-title="Create Playlist">
+  <ion-content>
+    <label class="item item-input">
+      <span class="input-label">Title</span>
+      <input type="text" ng-model="createPlaylistCtrl.title">
+    </label>
+    <div class="row">
+      <button class="button button-balanced col"
+        ng-click="createPlaylistCtrl.createPlaylist({title: createPlaylistCtrl.title})"
+        ui-sref="app.playlists()">
+        <i class="icon ion-ios-plus-empty"></i>
+        Add
+      </button>
+    </div>
+    <div class="row">
+      <button class="button button-stable col" ui-sref="app.playlists()">
+        Cancel
+      </button>
+    <div>
+  </ion-content>
+</ion-view>

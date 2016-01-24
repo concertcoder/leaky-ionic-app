@@ -6,6 +6,8 @@
 
 * This application is purposely left in an unstable state so you can apply the techniques learned to fix them
 
+* Presentation of techniques is found here [https://docs.google.com/presentation/d/1xtbJzqopuDTxBSOuU1ZgK1TjPExuRWXsVqyjC2N_QOw/edit?usp=sharing](https://docs.google.com/presentation/d/1xtbJzqopuDTxBSOuU1ZgK1TjPExuRWXsVqyjC2N_QOw/edit?usp=sharing)
+
 ## Problem ##
 
 * Try and find the 3 memory leaks in this application
